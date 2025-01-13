@@ -2,10 +2,279 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>Destek Sayfam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uygulama Desteği</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Genel Sıfırlama */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(
+        to bottom right,
+        rgba(70,130,180, 0.9),
+        rgba(100,149,237, 0.9),
+        rgba(173,216,230, 0.85)
+      );
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      width: 100%;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .logo {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: #333;
+    }
+    nav .logo span {
+      color: #007ACC;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #007ACC;
+    }
+    
+    main {
+      flex: 1; /* Kalan alana yayılsın */
+    }
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px 30px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .hero p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #f4f4f4;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* FAQ (Sık Sorulan Sorular) */
+    .faq-section {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      padding-bottom: 20px;
+    }
+    .faq-section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 20px 0;
+      color: #333;
+    }
+    details {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 15px;
+      cursor: pointer;
+    }
+    details summary {
+      font-weight: 600;
+      font-size: 1rem;
+      outline: none; /* default çerçeveyi gizle */
+    }
+    details summary:hover {
+      color: #007ACC;
+    }
+    details p {
+      margin-top: 8px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    /* İletişim Formu / Contact */
+    .contact {
+      max-width: 800px;
+      margin: 30px auto 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .contact p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .contact .email-link {
+      background: #007ACC;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .contact .email-link:hover {
+      background: #005a99;
+    }
+    
+    footer {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      padding: 10px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    footer a {
+      color: #007ACC;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* RESPONSIVE KIRILMA NOKTALARI */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        display: none; /* Basit çözüm: menüyü gizliyoruz. Gelişmiş menü istiyorsanız hamburger menü ekleyebilirsiniz. */
+      }
+    }
+    @media (max-width: 576px) {
+      .hero p {
+        font-size: 1rem;
+      }
+      details summary {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Merhaba!</h1>
-  <p>Bu, GitHub Pages üzerinde yayınladığım basit bir HTML sayfasıdır.</p>
+  <!-- ÜST KISIM / NAVBAR -->
+  <header>
+    <nav>
+      <div class="logo">
+        <span>My</span>Support
+      </div>
+      <ul>
+        <li><a href="#faq">SSS</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- HERO (Ana başlık) -->
+    <section class="hero">
+      <h1>Uygulama Destek & Yardım</h1>
+      <p>
+        Uygulamamızla ilgili tüm sorularınız ve ihtiyaç duyduğunuz destek için doğru adrestesiniz. 
+        Aşağıdaki sık sorulan sorular bölümüne göz atabilir veya bize doğrudan ulaşabilirsiniz.
+      </p>
+    </section>
+    
+    <!-- FAQ SECTION -->
+    <section id="faq" class="faq-section">
+      <h2>Sık Sorulan Sorular</h2>
+      
+      <details open>
+        <summary>1) Nasıl kayıt oluşturabilirim?</summary>
+        <p>
+          Uygulamayı indirip açtıktan sonra, “Hesap Oluştur” butonuna dokunarak e-posta veya sosyal medya hesabınızla kayıt yapabilirsiniz.
+        </p>
+      </details>
+      
+      <details>
+        <summary>2) Uygulama tamamen ücretsiz mi?</summary>
+        <p>
+          Temel özellikler ücretsiz. Ancak ek avantajlar ve premium içerikler için aylık abonelik seçenekleri mevcut.
+        </p>
+      </details>
+      
+      <details>
+        <summary>3) Hesap bilgilerimi nasıl güncellerim?</summary>
+        <p>
+          Profil sekmesine giderek, “Ayarlar” butonuna dokunun. Buradan kullanıcı adınızı, profil fotoğrafınızı veya e-posta adresinizi düzenleyebilirsiniz.
+        </p>
+      </details>
+      
+      <details>
+        <summary>4) Bildirimleri kapatabilir miyim?</summary>
+        <p>
+          Evet. Ayarlar menüsünde “Bildirim Ayarları” bölümünden istediğiniz bildirim türünü pasif hâle getirebilirsiniz.
+        </p>
+      </details>
+      
+      <details>
+        <summary>5) Verilerim güvende mi?</summary>
+        <p>
+          Evet. Veri güvenliğine çok önem veriyoruz. Tüm hassas bilgiler SSL üzerinden şifrelenmiş olarak saklanır ve asla 3. taraflarla paylaşılmaz.
+        </p>
+      </details>
+    </section>
+    
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+      <h2>Bize Ulaşın</h2>
+      <p>
+        Yukarıdaki sorular çözüm sunmadı mı? Hiç sorun değil! Aşağıdaki butonu kullanarak bize e-posta gönderebilirsiniz.
+      </p>
+      <a
+        class="email-link"
+        href="mailto:support@uygulamadestek.com?subject=Destek Talebi&body=Merhaba Destek Ekibi,"
+      >
+        E-Posta Gönder
+      </a>
+    </section>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer>
+    © 2025 My Support. Tüm hakları saklıdır.
+    <br />
+    <a href="#">Gizlilik Politikası</a> | <a href="#">Kullanım Şartları</a>
+  </footer>
 </body>
 </html>
